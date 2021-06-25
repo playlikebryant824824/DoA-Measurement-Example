@@ -63,9 +63,9 @@ def positioning(ratio0, ratio1, ratio2, ratio3, Position, angleturn0, angleturn1
     answery = []
     final = []
 
+    while len(ratio0) == 0 or ratio0.popleft() == '':
+        time.sleep(5)
     func = reversefunc(ratio0.popleft())
-    if len(ratio0) == 0:
-        time.sleep(20)
     if func > 50:
         func = 50
     phii = angleturn0 + func#求出Rx1對Tx角度 (0, 0)
@@ -85,9 +85,9 @@ def positioning(ratio0, ratio1, ratio2, ratio3, Position, angleturn0, angleturn1
     # print(b)
     
     # print('anchor1=', ratio1.popleft())
+    while len(ratio1) == 0 or ratio1.popleft() == '':
+        time.sleep(5)
     func1 = reversefunc(ratio1.popleft())
-    if len(ratio1) == 0:
-        time.sleep(20)
     if func1 > 50:
         func1 = 50
     phii1 = - func1 - angleturn1#求出Rx2對Tx角度 (100, 0)
@@ -107,9 +107,9 @@ def positioning(ratio0, ratio1, ratio2, ratio3, Position, angleturn0, angleturn1
     b1array = np.array([b1, b1_1])
     
     if N >= 3:
+        while len(ratio2) == 0 or ratio2.popleft() == '':
+            time.sleep(5)
         func2 = reversefunc(ratio2.popleft())
-        if len(ratio2) == 0:
-            time.sleep(20)
         if func2 > 50:
             func2 = 50
         phii2 = - func2 - angleturn2#求出Rx2對Tx角度 (100, 0)
@@ -133,9 +133,9 @@ def positioning(ratio0, ratio1, ratio2, ratio3, Position, angleturn0, angleturn1
         # print(b2)
         
     elif N >= 4:
+        while len(ratio3) == 0 or ratio3.popleft() == '':
+            time.sleep(5)
         func3 = reversefunc(ratio3.popleft())
-        if len(ratio0) == 0:
-            time.sleep(20)
         if func > 50:
             func = 50
         phii3 = angleturn3 + func3#求出Rx1對Tx角度 (0, 0)
