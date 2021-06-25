@@ -239,8 +239,8 @@ def animation(i):#animation fuction for positioning
         x = positionx.popleft()
         y = positiony.popleft()
         plt.scatter(x, y, s = 60, marker = '.', color = 'red', alpha = 1) 
-        with open(r'C:\Users\KOBE_NTU\Desktop\定位_2.csv', 'a') as csvw:
-            csvw.write( '%f'%x + ','+ '%f'%y +','+'\n')    
+        # with open(r'C:\Users\KOBE_NTU\Desktop\定位_2.csv', 'a') as csvw:
+        #     csvw.write( '%f'%x + ','+ '%f'%y +','+'\n')    
     else:
         time.sleep(10)
 
