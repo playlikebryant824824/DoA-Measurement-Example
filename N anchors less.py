@@ -64,7 +64,7 @@ def positioning(ratio0, ratio1, ratio2, ratio3, Position, angleturn0, angleturn1
     final = []
 
     while len(ratio0) == 0 or ratio0.popleft() == '':
-        time.sleep(5)
+        time.sleep(10)
     func = reversefunc(ratio0.popleft())
     if func > 50:
         func = 50
@@ -86,7 +86,7 @@ def positioning(ratio0, ratio1, ratio2, ratio3, Position, angleturn0, angleturn1
     
     # print('anchor1=', ratio1.popleft())
     while len(ratio1) == 0 or ratio1.popleft() == '':
-        time.sleep(5)
+        time.sleep(10)
     func1 = reversefunc(ratio1.popleft())
     if func1 > 50:
         func1 = 50
@@ -108,7 +108,7 @@ def positioning(ratio0, ratio1, ratio2, ratio3, Position, angleturn0, angleturn1
     
     if N >= 3:
         while len(ratio2) == 0 or ratio2.popleft() == '':
-            time.sleep(5)
+            time.sleep(10)
         func2 = reversefunc(ratio2.popleft())
         if func2 > 50:
             func2 = 50
@@ -134,7 +134,7 @@ def positioning(ratio0, ratio1, ratio2, ratio3, Position, angleturn0, angleturn1
         
     elif N >= 4:
         while len(ratio3) == 0 or ratio3.popleft() == '':
-            time.sleep(5)
+            time.sleep(10)
         func3 = reversefunc(ratio3.popleft())
         if func > 50:
             func = 50
