@@ -28,7 +28,6 @@ angleturn3 = 0
 def on_connect(client, userdata, flags, rc):# The callback for when the client receives a CONNECT response from the server.
     for i in range (0, N, 1):
         client.subscribe(MQTTlist[i])
-        time.sleep(10)
         print("Connected with result code"+str(rc))
     
 def reversefunc(phi):
@@ -63,7 +62,7 @@ def positioning(ratio0, ratio1, ratio2, ratio3, Position, angleturn0, angleturn1
     answery = []
     final = []
 
-    while len(ratio0) == 0 or ratio0.popleft() == '':
+    while len(ratio0) == 0:
         time.sleep(10)
     func = reversefunc(ratio0.popleft())
     if func > 50:
@@ -85,7 +84,7 @@ def positioning(ratio0, ratio1, ratio2, ratio3, Position, angleturn0, angleturn1
     # print(b)
     
     # print('anchor1=', ratio1.popleft())
-    while len(ratio1) == 0 or ratio1.popleft() == '':
+    while len(ratio1) == 0:
         time.sleep(10)
     func1 = reversefunc(ratio1.popleft())
     if func1 > 50:
@@ -107,7 +106,7 @@ def positioning(ratio0, ratio1, ratio2, ratio3, Position, angleturn0, angleturn1
     b1array = np.array([b1, b1_1])
     
     if N >= 3:
-        while len(ratio2) == 0 or ratio2.popleft() == '':
+        while len(ratio2) == 0:
             time.sleep(10)
         func2 = reversefunc(ratio2.popleft())
         if func2 > 50:
@@ -133,7 +132,7 @@ def positioning(ratio0, ratio1, ratio2, ratio3, Position, angleturn0, angleturn1
         # print(b2)
         
     elif N >= 4:
-        while len(ratio3) == 0 or ratio3.popleft() == '':
+        while len(ratio3) == 0:
             time.sleep(10)
         func3 = reversefunc(ratio3.popleft())
         if func > 50:
